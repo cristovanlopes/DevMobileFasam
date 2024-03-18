@@ -4,46 +4,53 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="373d4686-e379-416d-86e8-43f2894020ca" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/proguard-rules.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/androidTest/java/com/example/ex1/ExampleInstrumentedTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/java/com/example/ex1/MainActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/drawable/ic_launcher_foreground.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/mipmap-anydpi/ic_launcher.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/mipmap-anydpi/ic_launcher_round.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/mipmap-hdpi/ic_launcher.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/mipmap-mdpi/ic_launcher.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/values-night/themes.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/values/themes.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/xml/backup_rules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/xml/data_extraction_rules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/test/java/com/example/ex1/ExampleUnitTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/gradle/libs.versions.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/settings.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/ex1/.gradle/8.4/fileChanges/last-build.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/ex1/.gradle/8.4/gc.properties" afterDir="false" />
+    <list default="true" id="373d4686-e379-416d-86e8-43f2894020ca" name="Changes" comment="removido ok">
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/.idea/deploymentTargetDropDown.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/.idea/migrations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/proguard-rules.pro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/androidTest/java/com/example/exercicio1/ExampleInstrumentedTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/java/com/example/exercicio1/MainActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/drawable/ic_launcher_foreground.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/mipmap-anydpi/ic_launcher.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/mipmap-anydpi/ic_launcher_round.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/mipmap-hdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/mipmap-mdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/values-night/themes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/xml/backup_rules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/xml/data_extraction_rules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/test/java/com/example/exercicio1/ExampleUnitTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/gradle.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/gradle/libs.versions.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,11 +67,11 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2dq3JQbtKUBl34YTrHcgZQ3iLKc" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -80,7 +87,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true"
+    "cidr.known.project.marker": "true",
+    "run.code.analysis.last.selected.profile": "pProject Default"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -92,9 +100,20 @@
       <option name="presentableId" value="Default" />
       <updated>1710721709189</updated>
     </task>
+    <task id="LOCAL-00001" summary="removido ok">
+      <option name="closed" value="true" />
+      <created>1710723137884</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1710723137884</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="removido ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="removido ok" />
   </component>
 </project>
