@@ -1,0 +1,1425 @@
+Index: Listas/Lista1/Exercicio1/app/build.gradle.kts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Listas/Lista1/Exercicio1/app/build.gradle.kts b/Listas/Lista1/Exercicio1/app/build.gradle.kts
+new file mode 100644
+--- /dev/null	(date 1710723194746)
++++ b/Listas/Lista1/Exercicio1/app/build.gradle.kts	(date 1710723194746)
+@@ -0,0 +1,43 @@
++plugins {
++    alias(libs.plugins.androidApplication)
++}
++
++android {
++    namespace = "com.example.exercicio1"
++    compileSdk = 34
++
++    defaultConfig {
++        applicationId = "com.example.exercicio1"
++        minSdk = 29
++        targetSdk = 34
++        versionCode = 1
++        versionName = "1.0"
++
++        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
++    }
++
++    buildTypes {
++        release {
++            isMinifyEnabled = false
++            proguardFiles(
++                getDefaultProguardFile("proguard-android-optimize.txt"),
++                "proguard-rules.pro"
++            )
++        }
++    }
++    compileOptions {
++        sourceCompatibility = JavaVersion.VERSION_1_8
++        targetCompatibility = JavaVersion.VERSION_1_8
++    }
++}
++
++dependencies {
++
++    implementation(libs.appcompat)
++    implementation(libs.material)
++    implementation(libs.activity)
++    implementation(libs.constraintlayout)
++    testImplementation(libs.junit)
++    androidTestImplementation(libs.ext.junit)
++    androidTestImplementation(libs.espresso.core)
++}
+\ No newline at end of file
+Index: Listas/Lista1/Exercicio1/app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Listas/Lista1/Exercicio1/app/src/main/AndroidManifest.xml b/Listas/Lista1/Exercicio1/app/src/main/AndroidManifest.xml
+new file mode 100644
+--- /dev/null	(date 1710723194810)
++++ b/Listas/Lista1/Exercicio1/app/src/main/AndroidManifest.xml	(date 1710723194810)
+@@ -0,0 +1,26 @@
++<?xml version="1.0" encoding="utf-8"?>
++<manifest xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools">
++
++    <application
++        android:allowBackup="true"
++        android:dataExtractionRules="@xml/data_extraction_rules"
++        android:fullBackupContent="@xml/backup_rules"
++        android:icon="@mipmap/ic_launcher"
++        android:label="@string/app_name"
++        android:roundIcon="@mipmap/ic_launcher_round"
++        android:supportsRtl="true"
++        android:theme="@style/Theme.Exercicio1"
++        tools:targetApi="31">
++        <activity
++            android:name=".MainActivity"
++            android:exported="true">
++            <intent-filter>
++                <action android:name="android.intent.action.MAIN" />
++
++                <category android:name="android.intent.category.LAUNCHER" />
++            </intent-filter>
++        </activity>
++    </application>
++
++</manifest>
+\ No newline at end of file
+Index: Listas/Lista1/Exercicio1/app/src/test/java/com/example/exercicio1/ExampleUnitTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Listas/Lista1/Exercicio1/app/src/test/java/com/example/exercicio1/ExampleUnitTest.java b/Listas/Lista1/Exercicio1/app/src/test/java/com/example/exercicio1/ExampleUnitTest.java
+new file mode 100644
+--- /dev/null	(date 1710723193022)
++++ b/Listas/Lista1/Exercicio1/app/src/test/java/com/example/exercicio1/ExampleUnitTest.java	(date 1710723193022)
+@@ -0,0 +1,17 @@
++package com.example.exercicio1;
++
++import org.junit.Test;
++
++import static org.junit.Assert.*;
++
++/**
++ * Example local unit test, which will execute on the development machine (host).
++ *
++ * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
++ */
++public class ExampleUnitTest {
++    @Test
++    public void addition_isCorrect() {
++        assertEquals(4, 2 + 2);
++    }
++}
+\ No newline at end of file
+Index: Listas/Lista1/Exercicio1/app/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Listas/Lista1/Exercicio1/app/.gitignore b/Listas/Lista1/Exercicio1/app/.gitignore
+new file mode 100644
+--- /dev/null	(date 1710723191546)
++++ b/Listas/Lista1/Exercicio1/app/.gitignore	(date 1710723191546)
+@@ -0,0 +1,1 @@
++/build
+\ No newline at end of file
+Index: Listas/Lista1/Exercicio1/app/src/androidTest/java/com/example/exercicio1/ExampleInstrumentedTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Listas/Lista1/Exercicio1/app/src/androidTest/java/com/example/exercicio1/ExampleInstrumentedTest.java b/Listas/Lista1/Exercicio1/app/src/androidTest/java/com/example/exercicio1/ExampleInstrumentedTest.java
+new file mode 100644
+--- /dev/null	(date 1710723193174)
++++ b/Listas/Lista1/Exercicio1/app/src/androidTest/java/com/example/exercicio1/ExampleInstrumentedTest.java	(date 1710723193174)
+@@ -0,0 +1,26 @@
++package com.example.exercicio1;
++
++import android.content.Context;
++
++import androidx.test.platform.app.InstrumentationRegistry;
++import androidx.test.ext.junit.runners.AndroidJUnit4;
++
++import org.junit.Test;
++import org.junit.runner.RunWith;
++
++import static org.junit.Assert.*;
++
++/**
++ * Instrumented test, which will execute on an Android device.
++ *
++ * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
++ */
++@RunWith(AndroidJUnit4.class)
++public class ExampleInstrumentedTest {
++    @Test
++    public void useAppContext() {
++        // Context of the app under test.
++        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
++        assertEquals("com.example.exercicio1", appContext.getPackageName());
++    }
++}
+\ No newline at end of file
+Index: Listas/Lista1/Exercicio1/app/proguard-rules.pro
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Listas/Lista1/Exercicio1/app/proguard-rules.pro b/Listas/Lista1/Exercicio1/app/proguard-rules.pro
+new file mode 100644
+--- /dev/null	(date 1710723191666)
++++ b/Listas/Lista1/Exercicio1/app/proguard-rules.pro	(date 1710723191666)
+@@ -0,0 +1,21 @@
++# Add project specific ProGuard rules here.
++# You can control the set of applied configuration files using the
++# proguardFiles setting in build.gradle.
++#
++# For more details, see
++#   http://developer.android.com/guide/developing/tools/proguard.html
++
++# If your project uses WebView with JS, uncomment the following
++# and specify the fully qualified class name to the JavaScript interface
++# class:
++#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
++#   public *;
++#}
++
++# Uncomment this to preserve the line number information for
++# debugging stack traces.
++#-keepattributes SourceFile,LineNumberTable
++
++# If you keep the line number information, uncomment this to
++# hide the original source file name.
++#-renamesourcefileattribute SourceFile
+\ No newline at end of file
+Index: Listas/Lista1/Exercicio1/app/src/main/res/mipmap-anydpi/ic_launcher.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Listas/Lista1/Exercicio1/app/src/main/res/mipmap-anydpi/ic_launcher.xml b/Listas/Lista1/Exercicio1/app/src/main/res/mipmap-anydpi/ic_launcher.xml
+new file mode 100644
+--- /dev/null	(date 1710723193218)
++++ b/Listas/Lista1/Exercicio1/app/src/main/res/mipmap-anydpi/ic_launcher.xml	(date 1710723193218)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="utf-8"?>
++<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
++    <background android:drawable="@drawable/ic_launcher_background" />
++    <foreground android:drawable="@drawable/ic_launcher_foreground" />
++    <monochrome android:drawable="@drawable/ic_launcher_foreground" />
++</adaptive-icon>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"NONE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"373d4686-e379-416d-86e8-43f2894020ca\" name=\"Changes\" comment=\"\">\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/.gitignore\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/app/.gitignore\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/app/build.gradle.kts\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/app/proguard-rules.pro\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/androidTest/java/com/example/ex1/ExampleInstrumentedTest.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/AndroidManifest.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/java/com/example/ex1/MainActivity.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/drawable/ic_launcher_background.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/drawable/ic_launcher_foreground.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/layout/activity_main.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/mipmap-anydpi/ic_launcher.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/mipmap-anydpi/ic_launcher_round.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/mipmap-hdpi/ic_launcher.webp\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/mipmap-mdpi/ic_launcher.webp\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/mipmap-xhdpi/ic_launcher.webp\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/values-night/themes.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/values/colors.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/values/strings.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/values/themes.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/xml/backup_rules.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/xml/data_extraction_rules.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/test/java/com/example/ex1/ExampleUnitTest.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/build.gradle.kts\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/gradle.properties\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/gradle/libs.versions.toml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/gradle/wrapper/gradle-wrapper.jar\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/gradle/wrapper/gradle-wrapper.properties\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/gradlew\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/gradlew.bat\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/Ex1/settings.gradle.kts\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/ex1/.gradle/8.4/fileChanges/last-build.bin\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Listas/Lista1/ex1/.gradle/8.4/gc.properties\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"ClangdSettings\">\n    <option name=\"formatViaClangd\" value=\"false\" />\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProblemsViewState\">\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\n  </component>\n  <component name=\"ProjectColorInfo\"><![CDATA[{\n  \"associatedIndex\": 1\n}]]></component>\n  <component name=\"ProjectId\" id=\"2dq3JQbtKUBl34YTrHcgZQ3iLKc\" />\n  <component name=\"ProjectLevelVcsManager\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"ASKED_ADD_EXTERNAL_FILES\": \"true\",\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"RunOnceActivity.cidr.known.project.marker\": \"true\",\n    \"cf.first.check.clang-format\": \"false\",\n    \"cidr.known.project.marker\": \"true\"\n  }\n}]]></component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"373d4686-e379-416d-86e8-43f2894020ca\" name=\"Changes\" comment=\"\" />\n      <created>1710721709189</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1710721709189</updated>\n    </task>\n    <servers />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 8abf1121db880aba0d63f9427ed74c84a53eab66)
++++ b/.idea/workspace.xml	(date 1710801840249)
+@@ -4,46 +4,53 @@
+     <option name="autoReloadType" value="NONE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="373d4686-e379-416d-86e8-43f2894020ca" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/.gitignore" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/.gitignore" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/build.gradle.kts" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/proguard-rules.pro" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/androidTest/java/com/example/ex1/ExampleInstrumentedTest.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/AndroidManifest.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/java/com/example/ex1/MainActivity.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/drawable/ic_launcher_foreground.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/mipmap-anydpi/ic_launcher.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/mipmap-anydpi/ic_launcher_round.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/mipmap-hdpi/ic_launcher.webp" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/mipmap-mdpi/ic_launcher.webp" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/values-night/themes.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/values/colors.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/values/strings.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/values/themes.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/xml/backup_rules.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/main/res/xml/data_extraction_rules.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/app/src/test/java/com/example/ex1/ExampleUnitTest.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/build.gradle.kts" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/gradle.properties" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/gradle/libs.versions.toml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/gradlew" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/gradlew.bat" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Ex1/settings.gradle.kts" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/ex1/.gradle/8.4/fileChanges/last-build.bin" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Listas/Lista1/ex1/.gradle/8.4/gc.properties" afterDir="false" />
++    <list default="true" id="373d4686-e379-416d-86e8-43f2894020ca" name="Changes" comment="removido ok">
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/.gitignore" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/.idea/.name" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/.idea/compiler.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/.idea/deploymentTargetDropDown.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/.idea/gradle.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/.idea/migrations.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/.idea/misc.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/.idea/vcs.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/.gitignore" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/build.gradle.kts" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/proguard-rules.pro" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/androidTest/java/com/example/exercicio1/ExampleInstrumentedTest.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/AndroidManifest.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/java/com/example/exercicio1/MainActivity.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/drawable/ic_launcher_foreground.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/layout/activity_main.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/mipmap-anydpi/ic_launcher.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/mipmap-anydpi/ic_launcher_round.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/mipmap-hdpi/ic_launcher.webp" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/mipmap-mdpi/ic_launcher.webp" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/values-night/themes.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/values/colors.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/values/strings.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/values/themes.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/xml/backup_rules.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/main/res/xml/data_extraction_rules.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/app/src/test/java/com/example/exercicio1/ExampleUnitTest.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/build.gradle.kts" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/gradle.properties" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/gradle/libs.versions.toml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/gradlew" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/gradlew.bat" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Listas/Lista1/Exercicio1/settings.gradle.kts" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -60,11 +67,11 @@
+     <option name="stateVersion" value="1" />
+   </component>
+   <component name="ProblemsViewState">
+-    <option name="selectedTabId" value="CurrentFile" />
++    <option name="selectedTabId" value="ProjectErrors" />
+   </component>
+-  <component name="ProjectColorInfo"><![CDATA[{
+-  "associatedIndex": 1
+-}]]></component>
++  <component name="ProjectColorInfo">{
++  &quot;associatedIndex&quot;: 1
++}</component>
+   <component name="ProjectId" id="2dq3JQbtKUBl34YTrHcgZQ3iLKc" />
+   <component name="ProjectLevelVcsManager">
+     <ConfirmationsSetting value="2" id="Add" />
+@@ -80,7 +87,8 @@
+     "RunOnceActivity.ShowReadmeOnStart": "true",
+     "RunOnceActivity.cidr.known.project.marker": "true",
+     "cf.first.check.clang-format": "false",
+-    "cidr.known.project.marker": "true"
++    "cidr.known.project.marker": "true",
++    "run.code.analysis.last.selected.profile": "pProject Default"
+   }
+ }]]></component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+@@ -92,9 +100,20 @@
+       <option name="presentableId" value="Default" />
+       <updated>1710721709189</updated>
+     </task>
++    <task id="LOCAL-00001" summary="removido ok">
++      <option name="closed" value="true" />
++      <created>1710723137884</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1710723137884</updated>
++    </task>
++    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
+   <component name="VcsManagerConfiguration">
+     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
++    <MESSAGE value="removido ok" />
++    <option name="LAST_COMMIT_MESSAGE" value="removido ok" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ProjectRootManager\">\n    <output url=\"file://$PROJECT_DIR$/out\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 8abf1121db880aba0d63f9427ed74c84a53eab66)
++++ b/.idea/misc.xml	(date 1710800657273)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager">
++  <component name="ProjectRootManager" version="2" project-jdk-name="Android API 34, extension level 7 Platform" project-jdk-type="Android SDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: Listas/Lista1/Exercicio1/.idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Listas/Lista1/Exercicio1/.idea/misc.xml b/Listas/Lista1/Exercicio1/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1710724112154)
++++ b/Listas/Lista1/Exercicio1/.idea/misc.xml	(date 1710724112154)
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ExternalStorageConfigurationManager" enabled="true" />
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
++    <output url="file://$PROJECT_DIR$/build/classes" />
++  </component>
++  <component name="ProjectType">
++    <option name="id" value="Android" />
++  </component>
++</project>
+\ No newline at end of file
+Index: Listas/Lista1/Exercicio1/app/src/main/res/values/themes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Listas/Lista1/Exercicio1/app/src/main/res/values/themes.xml b/Listas/Lista1/Exercicio1/app/src/main/res/values/themes.xml
+new file mode 100644
+--- /dev/null	(date 1710723194150)
++++ b/Listas/Lista1/Exercicio1/app/src/main/res/values/themes.xml	(date 1710723194150)
+@@ -0,0 +1,9 @@
++<resources xmlns:tools="http://schemas.android.com/tools">
++    <!-- Base application theme. -->
++    <style name="Base.Theme.Exercicio1" parent="Theme.Material3.DayNight.NoActionBar">
++        <!-- Customize your light theme here. -->
++        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
++    </style>
++
++    <style name="Theme.Exercicio1" parent="Base.Theme.Exercicio1" />
++</resources>
+\ No newline at end of file
+Index: Listas/Lista1/Exercicio1/app/src/main/res/values/colors.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Listas/Lista1/Exercicio1/app/src/main/res/values/colors.xml b/Listas/Lista1/Exercicio1/app/src/main/res/values/colors.xml
+new file mode 100644
+--- /dev/null	(date 1710723194182)
++++ b/Listas/Lista1/Exercicio1/app/src/main/res/values/colors.xml	(date 1710723194182)
+@@ -0,0 +1,5 @@
++<?xml version="1.0" encoding="utf-8"?>
++<resources>
++    <color name="black">#FF000000</color>
++    <color name="white">#FFFFFFFF</color>
++</resources>
+\ No newline at end of file
+Index: Listas/Lista1/Exercicio1/.idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Listas/Lista1/Exercicio1/.idea/compiler.xml b/Listas/Lista1/Exercicio1/.idea/compiler.xml
+new file mode 100644
+--- /dev/null	(date 1710724112162)
++++ b/Listas/Lista1/Exercicio1/.idea/compiler.xml	(date 1710724112162)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="CompilerConfiguration">
++    <bytecodeTargetLevel target="17" />
++  </component>
++</project>
+\ No newline at end of file
+Index: Listas/Lista1/Exercicio1/.idea/.name
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Listas/Lista1/Exercicio1/.idea/.name b/Listas/Lista1/Exercicio1/.idea/.name
+new file mode 100644
+--- /dev/null	(date 1710724112070)
++++ b/Listas/Lista1/Exercicio1/.idea/.name	(date 1710724112070)
+@@ -0,0 +1,1 @@
++Exercicio 1
+\ No newline at end of file
+Index: Listas/Lista1/Exercicio1/app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Listas/Lista1/Exercicio1/app/src/main/res/values/strings.xml b/Listas/Lista1/Exercicio1/app/src/main/res/values/strings.xml
+new file mode 100644
+--- /dev/null	(date 1710723194310)
++++ b/Listas/Lista1/Exercicio1/app/src/main/res/values/strings.xml	(date 1710723194310)
+@@ -0,0 +1,3 @@
++<resources>
++    <string name="app_name">Exercicio 1</string>
++</resources>
+\ No newline at end of file
+Index: Listas/Lista1/Exercicio1/app/src/main/res/drawable/ic_launcher_foreground.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Listas/Lista1/Exercicio1/app/src/main/res/drawable/ic_launcher_foreground.xml b/Listas/Lista1/Exercicio1/app/src/main/res/drawable/ic_launcher_foreground.xml
+new file mode 100644
+--- /dev/null	(date 1710723194062)
++++ b/Listas/Lista1/Exercicio1/app/src/main/res/drawable/ic_launcher_foreground.xml	(date 1710723194062)
+@@ -0,0 +1,30 @@
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:aapt="http://schemas.android.com/aapt"
++    android:width="108dp"
++    android:height="108dp"
++    android:viewportWidth="108"
++    android:viewportHeight="108">
++    <path android:pathData="M31,63.928c0,0 6.4,-11 12.1,-13.1c7.2,-2.6 26,-1.4 26,-1.4l38.1,38.1L107,108.928l-32,-1L31,63.928z">
++        <aapt:attr name="android:fillColor">
++            <gradient
++                android:endX="85.84757"
++                android:endY="92.4963"
++                android:startX="42.9492"
++                android:startY="49.59793"
++                android:type="linear">
++                <item
++                    android:color="#44000000"
++                    android:offset="0.0" />
++                <item
++                    android:color="#00000000"
++                    android:offset="1.0" />
++            </gradient>
++        </aapt:attr>
++    </path>
++    <path
++        android:fillColor="#FFFFFF"
++        android:fillType="nonZero"
++        android:pathData="M65.3,45.828l3.8,-6.6c0.2,-0.4 0.1,-0.9 -0.3,-1.1c-0.4,-0.2 -0.9,-0.1 -1.1,0.3l-3.9,6.7c-6.3,-2.8 -13.4,-2.8 -19.7,0l-3.9,-6.7c-0.2,-0.4 -0.7,-0.5 -1.1,-0.3C38.8,38.328 38.7,38.828 38.9,39.228l3.8,6.6C36.2,49.428 31.7,56.028 31,63.928h46C76.3,56.028 71.8,49.428 65.3,45.828zM43.4,57.328c-0.8,0 -1.5,-0.5 -1.8,-1.2c-0.3,-0.7 -0.1,-1.5 0.4,-2.1c0.5,-0.5 1.4,-0.7 2.1,-0.4c0.7,0.3 1.2,1 1.2,1.8C45.3,56.528 44.5,57.328 43.4,57.328L43.4,57.328zM64.6,57.328c-0.8,0 -1.5,-0.5 -1.8,-1.2s-0.1,-1.5 0.4,-2.1c0.5,-0.5 1.4,-0.7 2.1,-0.4c0.7,0.3 1.2,1 1.2,1.8C66.5,56.528 65.6,57.328 64.6,57.328L64.6,57.328z"
++        android:strokeWidth="1"
++        android:strokeColor="#00000000" />
++</vector>
+\ No newline at end of file
+Index: Listas/Lista1/Exercicio1/app/src/main/res/mipmap-anydpi/ic_launcher_round.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Listas/Lista1/Exercicio1/app/src/main/res/mipmap-anydpi/ic_launcher_round.xml b/Listas/Lista1/Exercicio1/app/src/main/res/mipmap-anydpi/ic_launcher_round.xml
+new file mode 100644
+--- /dev/null	(date 1710723194090)
++++ b/Listas/Lista1/Exercicio1/app/src/main/res/mipmap-anydpi/ic_launcher_round.xml	(date 1710723194090)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="utf-8"?>
++<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
++    <background android:drawable="@drawable/ic_launcher_background" />
++    <foreground android:drawable="@drawable/ic_launcher_foreground" />
++    <monochrome android:drawable="@drawable/ic_launcher_foreground" />
++</adaptive-icon>
+\ No newline at end of file
+Index: Listas/Lista1/Exercicio1/app/src/main/res/drawable/ic_launcher_background.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Listas/Lista1/Exercicio1/app/src/main/res/drawable/ic_launcher_background.xml b/Listas/Lista1/Exercicio1/app/src/main/res/drawable/ic_launcher_background.xml
+new file mode 100644
+--- /dev/null	(date 1710723194014)
++++ b/Listas/Lista1/Exercicio1/app/src/main/res/drawable/ic_launcher_background.xml	(date 1710723194014)
+@@ -0,0 +1,170 @@
++<?xml version="1.0" encoding="utf-8"?>
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    android:width="108dp"
++    android:height="108dp"
++    android:viewportWidth="108"
++    android:viewportHeight="108">
++    <path
++        android:fillColor="#3DDC84"
++        android:pathData="M0,0h108v108h-108z" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M9,0L9,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,0L19,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M29,0L29,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M39,0L39,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M49,0L49,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M59,0L59,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M69,0L69,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M79,0L79,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M89,0L89,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M99,0L99,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,9L108,9"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,19L108,19"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,29L108,29"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,39L108,39"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,49L108,49"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,59L108,59"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,69L108,69"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,79L108,79"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,89L108,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,99L108,99"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,29L89,29"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,39L89,39"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,49L89,49"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,59L89,59"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,69L89,69"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,79L89,79"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M29,19L29,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M39,19L39,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M49,19L49,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M59,19L59,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M69,19L69,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M79,19L79,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++</vector>
+Index: Listas/Lista1/Exercicio1/gradle.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/Listas/Lista1/Exercicio1/gradle.properties b/Listas/Lista1/Exercicio1/gradle.properties
+new file mode 100644
+--- /dev/null	(date 1710723191282)
++++ b/Listas/Lista1/Exercicio1/gradle.properties	(date 1710723191282)
+@@ -0,0 +1,21 @@
++# Project-wide Gradle settings.
++# IDE (e.g. Android Studio) users:
++# Gradle settings configured through the IDE *will override*
++# any settings specified in this file.
++# For more details on how to configure your build environment visit
++# http://www.gradle.org/docs/current/userguide/build_environment.html
++# Specifies the JVM arguments used for the daemon process.
++# The setting is particularly useful for tweaking memory settings.
++org.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8
++# When configured, Gradle will run in incubating parallel mode.
++# This option should only be used with decoupled projects. For more details, visit
++# https://developer.android.com/r/tools/gradle-multi-project-decoupled-projects
++# org.gradle.parallel=true
++# AndroidX package structure to make it clearer which packages are bundled with the
++# Android operating system, and which are packaged with your app's APK
++# https://developer.android.com/topic/libraries/support-library/androidx-rn
++android.useAndroidX=true
++# Enables namespacing of each library's R class so that its R class includes only the
++# resources declared in the library itself and none from the library's dependencies,
++# thereby reducing the size of the R class for that library
++android.nonTransitiveRClass=true
+\ No newline at end of file
+Index: Listas/Lista1/Exercicio1/app/src/main/res/layout/activity_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Listas/Lista1/Exercicio1/app/src/main/res/layout/activity_main.xml b/Listas/Lista1/Exercicio1/app/src/main/res/layout/activity_main.xml
+new file mode 100644
+--- /dev/null	(date 1710800593416)
++++ b/Listas/Lista1/Exercicio1/app/src/main/res/layout/activity_main.xml	(date 1710800593416)
+@@ -0,0 +1,38 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".MainActivity">
++
++    <EditText
++        android:id="@+id/editTextName"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:hint="Digite seu nome"
++        app:layout_constraintBottom_toTopOf="@+id/buttonGreet"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent" />
++
++    <Button
++        android:id="@+id/buttonGreet"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:text="Saudar"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
++
++    <TextView
++        android:id="@+id/textViewGreeting"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:text=""
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/buttonGreet" />
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+Index: Listas/Lista1/Exercicio1/app/src/main/java/com/example/exercicio1/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Listas/Lista1/Exercicio1/app/src/main/java/com/example/exercicio1/MainActivity.java b/Listas/Lista1/Exercicio1/app/src/main/java/com/example/exercicio1/MainActivity.java
+new file mode 100644
+--- /dev/null	(date 1710800657201)
++++ b/Listas/Lista1/Exercicio1/app/src/main/java/com/example/exercicio1/MainActivity.java	(date 1710800657201)
+@@ -0,0 +1,32 @@
++import androidx.appcompat.app.AppCompatActivity;
++import android.os.Bundle;
++import android.view.View;
++import android.widget.Button;
++import android.widget.EditText;
++import android.widget.TextView;
++
++public class MainActivity extends AppCompatActivity {
++
++    EditText editTextName;
++    Button buttonGreet;
++    TextView textViewGreeting;
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_main);
++
++        editTextName = findViewById(R.id.editTextName);
++        buttonGreet = findViewById(R.id.buttonGreet);
++        textViewGreeting = findViewById(R.id.textViewGreeting);
++
++        buttonGreet.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View v) {
++                String name = editTextName.getText().toString();
++                String greeting = "Olá, " + name + "!";
++                textViewGreeting.setText(greeting);
++            }
++        });
++    }
++}
+Index: Listas/Lista1/Exercicio1/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Listas/Lista1/Exercicio1/.gitignore b/Listas/Lista1/Exercicio1/.gitignore
+new file mode 100644
+--- /dev/null	(date 1710723190930)
++++ b/Listas/Lista1/Exercicio1/.gitignore	(date 1710723190930)
+@@ -0,0 +1,15 @@
++*.iml
++.gradle
++/local.properties
++/.idea/caches
++/.idea/libraries
++/.idea/modules.xml
++/.idea/workspace.xml
++/.idea/navEditor.xml
++/.idea/assetWizardSettings.xml
++.DS_Store
++/build
++/captures
++.externalNativeBuild
++.cxx
++local.properties
+Index: Listas/Lista1/Exercicio1/app/src/main/res/xml/data_extraction_rules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Listas/Lista1/Exercicio1/app/src/main/res/xml/data_extraction_rules.xml b/Listas/Lista1/Exercicio1/app/src/main/res/xml/data_extraction_rules.xml
+new file mode 100644
+--- /dev/null	(date 1710723194262)
++++ b/Listas/Lista1/Exercicio1/app/src/main/res/xml/data_extraction_rules.xml	(date 1710723194262)
+@@ -0,0 +1,19 @@
++<?xml version="1.0" encoding="utf-8"?><!--
++   Sample data extraction rules file; uncomment and customize as necessary.
++   See https://developer.android.com/about/versions/12/backup-restore#xml-changes
++   for details.
++-->
++<data-extraction-rules>
++    <cloud-backup>
++        <!-- TODO: Use <include> and <exclude> to control what is backed up.
++        <include .../>
++        <exclude .../>
++        -->
++    </cloud-backup>
++    <!--
++    <device-transfer>
++        <include .../>
++        <exclude .../>
++    </device-transfer>
++    -->
++</data-extraction-rules>
+\ No newline at end of file
+Index: Listas/Lista1/Exercicio1/settings.gradle.kts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Listas/Lista1/Exercicio1/settings.gradle.kts b/Listas/Lista1/Exercicio1/settings.gradle.kts
+new file mode 100644
+--- /dev/null	(date 1710723192026)
++++ b/Listas/Lista1/Exercicio1/settings.gradle.kts	(date 1710723192026)
+@@ -0,0 +1,24 @@
++pluginManagement {
++    repositories {
++        google {
++            content {
++                includeGroupByRegex("com\\.android.*")
++                includeGroupByRegex("com\\.google.*")
++                includeGroupByRegex("androidx.*")
++            }
++        }
++        mavenCentral()
++        gradlePluginPortal()
++    }
++}
++dependencyResolutionManagement {
++    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
++    repositories {
++        google()
++        mavenCentral()
++    }
++}
++
++rootProject.name = "Exercicio 1"
++include(":app")
++ 
+\ No newline at end of file
+Index: Listas/Lista1/Exercicio1/.idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Listas/Lista1/Exercicio1/.idea/vcs.xml b/Listas/Lista1/Exercicio1/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1710724112194)
++++ b/Listas/Lista1/Exercicio1/.idea/vcs.xml	(date 1710724112194)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$/../../.." vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: Listas/Lista1/Exercicio1/app/src/main/res/xml/backup_rules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Listas/Lista1/Exercicio1/app/src/main/res/xml/backup_rules.xml b/Listas/Lista1/Exercicio1/app/src/main/res/xml/backup_rules.xml
+new file mode 100644
+--- /dev/null	(date 1710723194234)
++++ b/Listas/Lista1/Exercicio1/app/src/main/res/xml/backup_rules.xml	(date 1710723194234)
+@@ -0,0 +1,13 @@
++<?xml version="1.0" encoding="utf-8"?><!--
++   Sample backup rules file; uncomment and customize as necessary.
++   See https://developer.android.com/guide/topics/data/autobackup
++   for details.
++   Note: This file is ignored for devices older that API 31
++   See https://developer.android.com/about/versions/12/backup-restore
++-->
++<full-backup-content>
++    <!--
++   <include domain="sharedpref" path="."/>
++   <exclude domain="sharedpref" path="device.xml"/>
++-->
++</full-backup-content>
+\ No newline at end of file
+Index: Listas/Lista1/Exercicio1/build.gradle.kts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Listas/Lista1/Exercicio1/build.gradle.kts b/Listas/Lista1/Exercicio1/build.gradle.kts
+new file mode 100644
+--- /dev/null	(date 1710723192402)
++++ b/Listas/Lista1/Exercicio1/build.gradle.kts	(date 1710723192402)
+@@ -0,0 +1,4 @@
++// Top-level build file where you can add configuration options common to all sub-projects/modules.
++plugins {
++    alias(libs.plugins.androidApplication) apply false
++}
+\ No newline at end of file
+Index: Listas/Lista1/Exercicio1/.idea/deploymentTargetDropDown.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Listas/Lista1/Exercicio1/.idea/deploymentTargetDropDown.xml b/Listas/Lista1/Exercicio1/.idea/deploymentTargetDropDown.xml
+new file mode 100644
+--- /dev/null	(date 1710724112202)
++++ b/Listas/Lista1/Exercicio1/.idea/deploymentTargetDropDown.xml	(date 1710724112202)
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="deploymentTargetDropDown">
++    <value>
++      <entry key="app">
++        <State />
++      </entry>
++    </value>
++  </component>
++</project>
+\ No newline at end of file
+Index: Listas/Lista1/Exercicio1/.idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Listas/Lista1/Exercicio1/.idea/gradle.xml b/Listas/Lista1/Exercicio1/.idea/gradle.xml
+new file mode 100644
+--- /dev/null	(date 1710724112178)
++++ b/Listas/Lista1/Exercicio1/.idea/gradle.xml	(date 1710724112178)
+@@ -0,0 +1,18 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="GradleSettings">
++    <option name="linkedExternalProjectsSettings">
++      <GradleProjectSettings>
++        <option name="externalProjectPath" value="$PROJECT_DIR$" />
++        <option name="gradleJvm" value="#GRADLE_LOCAL_JAVA_HOME" />
++        <option name="modules">
++          <set>
++            <option value="$PROJECT_DIR$" />
++            <option value="$PROJECT_DIR$/app" />
++          </set>
++        </option>
++        <option name="resolveExternalAnnotations" value="false" />
++      </GradleProjectSettings>
++    </option>
++  </component>
++</project>
+\ No newline at end of file
+Index: Listas/Lista1/Exercicio1/app/src/main/res/values-night/themes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Listas/Lista1/Exercicio1/app/src/main/res/values-night/themes.xml b/Listas/Lista1/Exercicio1/app/src/main/res/values-night/themes.xml
+new file mode 100644
+--- /dev/null	(date 1710723194214)
++++ b/Listas/Lista1/Exercicio1/app/src/main/res/values-night/themes.xml	(date 1710723194214)
+@@ -0,0 +1,7 @@
++<resources xmlns:tools="http://schemas.android.com/tools">
++    <!-- Base application theme. -->
++    <style name="Base.Theme.Exercicio1" parent="Theme.Material3.DayNight.NoActionBar">
++        <!-- Customize your dark theme here. -->
++        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
++    </style>
++</resources>
+\ No newline at end of file
+Index: Listas/Lista1/Exercicio1/.idea/migrations.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Listas/Lista1/Exercicio1/.idea/migrations.xml b/Listas/Lista1/Exercicio1/.idea/migrations.xml
+new file mode 100644
+--- /dev/null	(date 1710724112186)
++++ b/Listas/Lista1/Exercicio1/.idea/migrations.xml	(date 1710724112186)
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectMigrations">
++    <option name="MigrateToGradleLocalJavaHome">
++      <set>
++        <option value="$PROJECT_DIR$" />
++      </set>
++    </option>
++  </component>
++</project>
+\ No newline at end of file
+Index: Listas/Lista1/Exercicio1/gradle/libs.versions.toml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Listas/Lista1/Exercicio1/gradle/libs.versions.toml b/Listas/Lista1/Exercicio1/gradle/libs.versions.toml
+new file mode 100644
+--- /dev/null	(date 1710723194594)
++++ b/Listas/Lista1/Exercicio1/gradle/libs.versions.toml	(date 1710723194594)
+@@ -0,0 +1,22 @@
++[versions]
++agp = "8.3.0"
++junit = "4.13.2"
++junitVersion = "1.1.5"
++espressoCore = "3.5.1"
++appcompat = "1.6.1"
++material = "1.11.0"
++activity = "1.8.0"
++constraintlayout = "2.1.4"
++
++[libraries]
++junit = { group = "junit", name = "junit", version.ref = "junit" }
++ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
++espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
++appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
++material = { group = "com.google.android.material", name = "material", version.ref = "material" }
++activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
++constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
++
++[plugins]
++androidApplication = { id = "com.android.application", version.ref = "agp" }
++
+Index: Listas/Lista1/Exercicio1/gradlew
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Listas/Lista1/Exercicio1/gradlew b/Listas/Lista1/Exercicio1/gradlew
+new file mode 100755
+--- /dev/null	(date 1710723191050)
++++ b/Listas/Lista1/Exercicio1/gradlew	(date 1710723191050)
+@@ -0,0 +1,185 @@
++#!/usr/bin/env sh
++
++#
++# Copyright 2015 the original author or authors.
++#
++# Licensed under the Apache License, Version 2.0 (the "License");
++# you may not use this file except in compliance with the License.
++# You may obtain a copy of the License at
++#
++#      https://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS,
++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++# See the License for the specific language governing permissions and
++# limitations under the License.
++#
++
++##############################################################################
++##
++##  Gradle start up script for UN*X
++##
++##############################################################################
++
++# Attempt to set APP_HOME
++# Resolve links: $0 may be a link
++PRG="$0"
++# Need this for relative symlinks.
++while [ -h "$PRG" ] ; do
++    ls=`ls -ld "$PRG"`
++    link=`expr "$ls" : '.*-> \(.*\)$'`
++    if expr "$link" : '/.*' > /dev/null; then
++        PRG="$link"
++    else
++        PRG=`dirname "$PRG"`"/$link"
++    fi
++done
++SAVED="`pwd`"
++cd "`dirname \"$PRG\"`/" >/dev/null
++APP_HOME="`pwd -P`"
++cd "$SAVED" >/dev/null
++
++APP_NAME="Gradle"
++APP_BASE_NAME=`basename "$0"`
++
++# Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
++DEFAULT_JVM_OPTS='"-Xmx64m" "-Xms64m"'
++
++# Use the maximum available, or set MAX_FD != -1 to use that value.
++MAX_FD="maximum"
++
++warn () {
++    echo "$*"
++}
++
++die () {
++    echo
++    echo "$*"
++    echo
++    exit 1
++}
++
++# OS specific support (must be 'true' or 'false').
++cygwin=false
++msys=false
++darwin=false
++nonstop=false
++case "`uname`" in
++  CYGWIN* )
++    cygwin=true
++    ;;
++  Darwin* )
++    darwin=true
++    ;;
++  MINGW* )
++    msys=true
++    ;;
++  NONSTOP* )
++    nonstop=true
++    ;;
++esac
++
++CLASSPATH=$APP_HOME/gradle/wrapper/gradle-wrapper.jar
++
++
++# Determine the Java command to use to start the JVM.
++if [ -n "$JAVA_HOME" ] ; then
++    if [ -x "$JAVA_HOME/jre/sh/java" ] ; then
++        # IBM's JDK on AIX uses strange locations for the executables
++        JAVACMD="$JAVA_HOME/jre/sh/java"
++    else
++        JAVACMD="$JAVA_HOME/bin/java"
++    fi
++    if [ ! -x "$JAVACMD" ] ; then
++        die "ERROR: JAVA_HOME is set to an invalid directory: $JAVA_HOME
++
++Please set the JAVA_HOME variable in your environment to match the
++location of your Java installation."
++    fi
++else
++    JAVACMD="java"
++    which java >/dev/null 2>&1 || die "ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH.
++
++Please set the JAVA_HOME variable in your environment to match the
++location of your Java installation."
++fi
++
++# Increase the maximum file descriptors if we can.
++if [ "$cygwin" = "false" -a "$darwin" = "false" -a "$nonstop" = "false" ] ; then
++    MAX_FD_LIMIT=`ulimit -H -n`
++    if [ $? -eq 0 ] ; then
++        if [ "$MAX_FD" = "maximum" -o "$MAX_FD" = "max" ] ; then
++            MAX_FD="$MAX_FD_LIMIT"
++        fi
++        ulimit -n $MAX_FD
++        if [ $? -ne 0 ] ; then
++            warn "Could not set maximum file descriptor limit: $MAX_FD"
++        fi
++    else
++        warn "Could not query maximum file descriptor limit: $MAX_FD_LIMIT"
++    fi
++fi
++
++# For Darwin, add options to specify how the application appears in the dock
++if $darwin; then
++    GRADLE_OPTS="$GRADLE_OPTS \"-Xdock:name=$APP_NAME\" \"-Xdock:icon=$APP_HOME/media/gradle.icns\""
++fi
++
++# For Cygwin or MSYS, switch paths to Windows format before running java
++if [ "$cygwin" = "true" -o "$msys" = "true" ] ; then
++    APP_HOME=`cygpath --path --mixed "$APP_HOME"`
++    CLASSPATH=`cygpath --path --mixed "$CLASSPATH"`
++
++    JAVACMD=`cygpath --unix "$JAVACMD"`
++
++    # We build the pattern for arguments to be converted via cygpath
++    ROOTDIRSRAW=`find -L / -maxdepth 1 -mindepth 1 -type d 2>/dev/null`
++    SEP=""
++    for dir in $ROOTDIRSRAW ; do
++        ROOTDIRS="$ROOTDIRS$SEP$dir"
++        SEP="|"
++    done
++    OURCYGPATTERN="(^($ROOTDIRS))"
++    # Add a user-defined pattern to the cygpath arguments
++    if [ "$GRADLE_CYGPATTERN" != "" ] ; then
++        OURCYGPATTERN="$OURCYGPATTERN|($GRADLE_CYGPATTERN)"
++    fi
++    # Now convert the arguments - kludge to limit ourselves to /bin/sh
++    i=0
++    for arg in "$@" ; do
++        CHECK=`echo "$arg"|egrep -c "$OURCYGPATTERN" -`
++        CHECK2=`echo "$arg"|egrep -c "^-"`                                 ### Determine if an option
++
++        if [ $CHECK -ne 0 ] && [ $CHECK2 -eq 0 ] ; then                    ### Added a condition
++            eval `echo args$i`=`cygpath --path --ignore --mixed "$arg"`
++        else
++            eval `echo args$i`="\"$arg\""
++        fi
++        i=`expr $i + 1`
++    done
++    case $i in
++        0) set -- ;;
++        1) set -- "$args0" ;;
++        2) set -- "$args0" "$args1" ;;
++        3) set -- "$args0" "$args1" "$args2" ;;
++        4) set -- "$args0" "$args1" "$args2" "$args3" ;;
++        5) set -- "$args0" "$args1" "$args2" "$args3" "$args4" ;;
++        6) set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" ;;
++        7) set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" "$args6" ;;
++        8) set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" "$args6" "$args7" ;;
++        9) set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" "$args6" "$args7" "$args8" ;;
++    esac
++fi
++
++# Escape application args
++save () {
++    for i do printf %s\\n "$i" | sed "s/'/'\\\\''/g;1s/^/'/;\$s/\$/' \\\\/" ; done
++    echo " "
++}
++APP_ARGS=`save "$@"`
++
++# Collect all arguments for the java command, following the shell quoting and substitution rules
++eval set -- $DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS "\"-Dorg.gradle.appname=$APP_BASE_NAME\"" -classpath "\"$CLASSPATH\"" org.gradle.wrapper.GradleWrapperMain "$APP_ARGS"
++
++exec "$JAVACMD" "$@"
+Index: Listas/Lista1/Exercicio1/gradlew.bat
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Listas/Lista1/Exercicio1/gradlew.bat b/Listas/Lista1/Exercicio1/gradlew.bat
+new file mode 100644
+--- /dev/null	(date 1710723191062)
++++ b/Listas/Lista1/Exercicio1/gradlew.bat	(date 1710723191062)
+@@ -0,0 +1,89 @@
++@rem
++@rem Copyright 2015 the original author or authors.
++@rem
++@rem Licensed under the Apache License, Version 2.0 (the "License");
++@rem you may not use this file except in compliance with the License.
++@rem You may obtain a copy of the License at
++@rem
++@rem      https://www.apache.org/licenses/LICENSE-2.0
++@rem
++@rem Unless required by applicable law or agreed to in writing, software
++@rem distributed under the License is distributed on an "AS IS" BASIS,
++@rem WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++@rem See the License for the specific language governing permissions and
++@rem limitations under the License.
++@rem
++
++@if "%DEBUG%" == "" @echo off
++@rem ##########################################################################
++@rem
++@rem  Gradle startup script for Windows
++@rem
++@rem ##########################################################################
++
++@rem Set local scope for the variables with windows NT shell
++if "%OS%"=="Windows_NT" setlocal
++
++set DIRNAME=%~dp0
++if "%DIRNAME%" == "" set DIRNAME=.
++set APP_BASE_NAME=%~n0
++set APP_HOME=%DIRNAME%
++
++@rem Resolve any "." and ".." in APP_HOME to make it shorter.
++for %%i in ("%APP_HOME%") do set APP_HOME=%%~fi
++
++@rem Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
++set DEFAULT_JVM_OPTS="-Xmx64m" "-Xms64m"
++
++@rem Find java.exe
++if defined JAVA_HOME goto findJavaFromJavaHome
++
++set JAVA_EXE=java.exe
++%JAVA_EXE% -version >NUL 2>&1
++if "%ERRORLEVEL%" == "0" goto execute
++
++echo.
++echo ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH.
++echo.
++echo Please set the JAVA_HOME variable in your environment to match the
++echo location of your Java installation.
++
++goto fail
++
++:findJavaFromJavaHome
++set JAVA_HOME=%JAVA_HOME:"=%
++set JAVA_EXE=%JAVA_HOME%/bin/java.exe
++
++if exist "%JAVA_EXE%" goto execute
++
++echo.
++echo ERROR: JAVA_HOME is set to an invalid directory: %JAVA_HOME%
++echo.
++echo Please set the JAVA_HOME variable in your environment to match the
++echo location of your Java installation.
++
++goto fail
++
++:execute
++@rem Setup the command line
++
++set CLASSPATH=%APP_HOME%\gradle\wrapper\gradle-wrapper.jar
++
++
++@rem Execute Gradle
++"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %GRADLE_OPTS% "-Dorg.gradle.appname=%APP_BASE_NAME%" -classpath "%CLASSPATH%" org.gradle.wrapper.GradleWrapperMain %*
++
++:end
++@rem End local scope for the variables with windows NT shell
++if "%ERRORLEVEL%"=="0" goto mainEnd
++
++:fail
++rem Set variable GRADLE_EXIT_CONSOLE if you need the _script_ return code instead of
++rem the _cmd.exe /c_ return code!
++if  not "" == "%GRADLE_EXIT_CONSOLE%" exit 1
++exit /b 1
++
++:mainEnd
++if "%OS%"=="Windows_NT" endlocal
++
++:omega
+Index: Listas/Lista1/Exercicio1/gradle/wrapper/gradle-wrapper.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/Listas/Lista1/Exercicio1/gradle/wrapper/gradle-wrapper.properties b/Listas/Lista1/Exercicio1/gradle/wrapper/gradle-wrapper.properties
+new file mode 100644
+--- /dev/null	(date 1710723195210)
++++ b/Listas/Lista1/Exercicio1/gradle/wrapper/gradle-wrapper.properties	(date 1710723195210)
+@@ -0,0 +1,6 @@
++#Sun Mar 17 21:53:15 BRT 2024
++distributionBase=GRADLE_USER_HOME
++distributionPath=wrapper/dists
++distributionUrl=https\://services.gradle.org/distributions/gradle-8.4-bin.zip
++zipStoreBase=GRADLE_USER_HOME
++zipStorePath=wrapper/dists
